@@ -1,0 +1,77 @@
+feature_name
+fda_approved_score
+ct_tox_score
+smi_length
+smi_ring_count
+smi_branch_count
+smi_double_bonds
+smi_triple_bonds
+smi_aromatic_atoms
+smi_nitrogen
+smi_oxygen
+smi_fluorine
+smi_chlorine
+smi_heteroatom_count
+phase_risk_score
+criteria_word_count
+criteria_has_exclusion
+criteria_has_age_limit
+why_stop_risk
+composite_risk_score
+tfidf_svd_0
+tfidf_svd_1
+tfidf_svd_2
+tfidf_svd_3
+tfidf_svd_4
+tfidf_svd_5
+tfidf_svd_6
+tfidf_svd_7
+tfidf_svd_8
+tfidf_svd_9
+tfidf_svd_10
+tfidf_svd_11
+tfidf_svd_12
+tfidf_svd_13
+tfidf_svd_14
+tfidf_svd_15
+tfidf_svd_16
+tfidf_svd_17
+tfidf_svd_18
+tfidf_svd_19
+tfidf_svd_20
+tfidf_svd_21
+tfidf_svd_22
+tfidf_svd_23
+tfidf_svd_24
+tfidf_svd_25
+tfidf_svd_26
+tfidf_svd_27
+tfidf_svd_28
+tfidf_svd_29
+tfidf_svd_30
+tfidf_svd_31
+tfidf_svd_32
+tfidf_svd_33
+tfidf_svd_34
+tfidf_svd_35
+tfidf_svd_36
+tfidf_svd_37
+tfidf_svd_38
+tfidf_svd_39
+tfidf_svd_40
+tfidf_svd_41
+tfidf_svd_42
+tfidf_svd_43
+tfidf_svd_44
+tfidf_svd_45
+tfidf_svd_46
+tfidf_svd_47
+tfidf_svd_48
+tfidf_svd_49
+ohe_phase_phase 1
+ohe_phase_phase 1/phase 2
+ohe_phase_phase 2
+ohe_phase_phase 2/phase 3
+ohe_phase_phase 3
+ohe_phase_phase 4
+ohe_phase_nan

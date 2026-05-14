@@ -1,0 +1,64 @@
+version: "3.9"
+
+services:
+  # ── PostgreSQL Database ─────────────────────────────────────
+  db:
+    image: postgres:15-alpine
+    container_name: clinical_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: clinicaluser
+      POSTGRES_PASSWORD: clinicalpw
+      POSTGRES_DB: clinicaltrials
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clinicaluser -d clinicaltrials"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Backend API ─────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: clinical_api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://clinicaluser:clinicalpw@db:5432/clinicaltrials
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ./datasets:/app/datasets
+      - ./saved_models:/app/saved_models
+      - ./visualizations:/app/visualizations
+      - ./evaluation:/app/evaluation
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      sh -c "python app.py --mode preprocess &&
+             python app.py --mode train &&
+             uvicorn backend.main:app --host 0.0.0.0 --port 8000 --workers 2"
+
+  # ── Frontend (React) ────────────────────────────────────────
+  frontend:
+    image: node:20-alpine
+    container_name: clinical_frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    environment:
+      VITE_API_URL: http://localhost:8000
+    depends_on:
+      - api
+
+volumes:
+  pgdata:

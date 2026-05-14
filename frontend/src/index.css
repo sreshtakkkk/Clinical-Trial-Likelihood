@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-primary antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-bg-card border border-border rounded-2xl shadow-card;
+  }
+  .btn-primary {
+    @apply bg-accent-blue hover:bg-blue-600 text-white font-medium px-5 py-2.5 rounded-xl transition-all duration-200 shadow-glow-blue;
+  }
+  .btn-ghost {
+    @apply bg-transparent hover:bg-bg-elevated text-text-secondary hover:text-text-primary border border-border hover:border-border-light px-5 py-2.5 rounded-xl transition-all duration-200;
+  }
+  .input-field {
+    @apply bg-bg-elevated border border-border rounded-xl px-4 py-3 text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue/30 transition-all duration-200;
+  }
+  .label {
+    @apply text-text-secondary text-sm font-medium mb-1.5 block;
+  }
+  .badge-success {
+    @apply bg-accent-green/15 text-accent-green border border-accent-green/30 text-xs font-medium px-2.5 py-1 rounded-full;
+  }
+  .badge-danger {
+    @apply bg-accent-rose/15 text-accent-rose border border-accent-rose/30 text-xs font-medium px-2.5 py-1 rounded-full;
+  }
+  .badge-warning {
+    @apply bg-accent-amber/15 text-accent-amber border border-accent-amber/30 text-xs font-medium px-2.5 py-1 rounded-full;
+  }
+  .badge-info {
+    @apply bg-accent-blue/15 text-accent-blue border border-accent-blue/30 text-xs font-medium px-2.5 py-1 rounded-full;
+  }
+  .stat-card {
+    @apply card p-6 flex flex-col gap-2;
+  }
+  .section-title {
+    @apply font-display text-2xl font-semibold text-text-primary;
+  }
+  .glow-dot {
+    @apply w-2 h-2 rounded-full animate-pulse-slow;
+  }
+}
+
+@layer utilities {
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-accent-cyan;
+  }
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-purple to-accent-blue;
+  }
+  .bg-grid {
+    background-image: linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}

@@ -1,0 +1,66 @@
+# 
+# Clinical Trial Success Predictor - Requirements
+# 
+
+# Core ML & Data Science
+numpy
+pandas
+scikit-learn
+xgboost
+imbalanced-learn
+scipy
+joblib
+
+# Deep Learning
+tensorflow-cpu
+keras
+keras-tuner
+
+# NLP
+nltk
+spacy
+wordcloud
+textblob
+
+# Chemistry / Molecular Features
+# rdkit  # Install via conda: conda install -c conda-forge rdkit
+mordred
+
+# Visualization
+matplotlib
+seaborn
+plotly
+shap
+
+# Backend API
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+pydantic-settings
+
+# Database
+sqlalchemy
+psycopg2-binary
+alembic
+
+# Utilities
+python-dotenv
+tqdm
+requests
+httpx
+
+# Notebook
+jupyter
+ipykernel
+nbformat
+
+# Testing
+pytest
+pytest-asyncio
+httpx
+
+# Linting / Formatting
+black
+isort
+flake8
