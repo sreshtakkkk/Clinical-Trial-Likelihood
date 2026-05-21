@@ -165,7 +165,3 @@ This system enables:
 - **Deployment**: Docker, Docker Compose
 
 ---
-
-## 📄 License
-
-MIT License — for research and educational purposes.
