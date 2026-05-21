@@ -1,4 +1,4 @@
-# 🧬 Predictive Modeling for Clinical-Trial Success Likelihood Using Machine Learning
+# 🧬 Predictive Modeling for Clinical-Trial Success Likelihood Using Machine Learnin
 
 A production-grade, full-stack ML system for predicting the success likelihood of clinical trials using multi-modal data including NLP text analysis, molecular SMILES features, and structured clinical metadata.
 
